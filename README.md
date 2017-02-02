@@ -1,14 +1,19 @@
 Description
 -----------
 This repository features a LuaLaTeX version of a convenient CV class and a template
-showing it usage. The template design was originally proposed by Gayle L. McDowell at 
-http://www.careercup.com/resume. 
+showing it usage. The template design was originally proposed by Gayle L. McDowell at
+http://www.careercup.com/resume.
 
 The class is based on `article` class. The paper format is set to U.S. letterpaper by default.
 
 Class Options
 -------------
  - `calibri` - sets calibri as the main font. Otherwise the default font is Times New Roman since version 1.1.0.
+
+
+Compiling step
+----
+/usr/local/texlive/2016/bin/x86_64-darwin/lualatex Zheng_Resume_Template.tex
 
 Commands
 --------
@@ -17,7 +22,7 @@ The class features the following commands:
  - `\address{address}` - defines the applicant's address to be printed by `\printheader`.
  - `\contacts{contacts}` - defines the applicant's contacts to be printed by `\printheader`.
  - `\makecvheader` - prints the CV header consisting of the name (see the `\name` command), address (see the `\address` command) and contacts (see the `\contacts` command).
- 
+
 Environments
 ------------
  - `\begin{cvsection}{sectionname}` - prints a section with a header consisting of the name in bold small caps and a page-wide horizontal line below.
