@@ -27,3 +27,9 @@ Environments
 ------------
  - `\begin{cvsection}{sectionname}` - prints a section with a header consisting of the name in bold small caps and a page-wide horizontal line below.
  - `\begin{cvsubsection}[linesnum]{left}{center}{right}{content}` - prints a subsection with header consisting of the `left`, `center` and `right` titles. The optional `linesnum` argument defines the amount of lines in the header. The argument only affects the vertical spacing between the environment header and content thus eliminating the effect of *tabu* package vertical spacing bug.
+
+
+CMDS
+----
+Install a package like texlive and use the xelatex directly
+`/usr/local/texlive/2017/bin/x86_64-darwin/xelatex Zheng_Resume_Template.tex`
