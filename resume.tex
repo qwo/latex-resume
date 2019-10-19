@@ -1,125 +1,132 @@
-%% The MIT License (MIT)
-%%
-%% Copyright (c) 2015 Daniil Belyakov
-%%
-%% Permission is hereby granted, free of charge, to any person obtaining a copy
-%% of this software and associated documentation files (the "Software"), to deal
-%% in the Software without restriction, including without limitation the rights
-%% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%% copies of the Software, and to permit persons to whom the Software is
-%% furnished to do so, subject to the following conditions:
-%%
-%% The above copyright notice and this permission notice shall be included in all
-%% copies or substantial portions of the Software.
-%%
-%% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-%% SOFTWARE.
+\documentclass[a4paper]{article}
+    \usepackage{fullpage}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{textcomp}
+    \usepackage[utf8]{inputenc}
+    \usepackage[T1]{fontenc}
+    \textheight=10in
+    \pagestyle{empty}
+    \raggedright
 
-% The font could be set to Windows-specific Calibri by using the 'calibri' option
-\documentclass[]{mcdowellcv}
+    %\renewcommand{\encodingdefault}{cg}
+%\renewcommand{\rmdefault}{lgrcmr}
 
-% For mathematical symbols
-\usepackage{amsmath}
+\def\bull{\vrule height 0.8ex width .7ex depth -.1ex }
 
-% Set applicant's personal data for header
-\name{Stanley Zheng}
-\contacts{(347) 399-3732 \linebreak stanley@stanzheng.com}
+% DEFINITIONS FOR RESUME %%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{document}
+\newcommand{\area} [2] {
+    \vspace*{-9pt}
+    \begin{verse}
+        \textbf{#1}   #2
+    \end{verse}
+}
 
-    % Print the header
-    \makeheader
+\newcommand{\lineunder} {
+    \vspace*{-8pt} \\
+    \hspace*{-18pt} \hrulefill \\
+}
 
-    % Print the content
-    \begin{cvsection}{Employment}
+\newcommand{\header} [1] {
+    {\hspace*{-18pt}\vspace*{6pt} \textsc{#1}}
+    \vspace*{-6pt} \lineunder
+}
+
+\newcommand{\employer} [3] {
+    { \textbf{#1} (#2)\\ \underline{\textbf{\emph{#3}}}\\  }
+}
+
+\newcommand{\contact} [3] {
+    \vspace*{-10pt}
+    \begin{center}
+        {\Huge \scshape {#1}}\\
+        #2 \\ #3
+    \end{center}
+    \vspace*{-8pt}
+}
+
+\newenvironment{achievements}{
+    \begin{list}
+        {$\bullet$}{\topsep 0pt \itemsep -2pt}}{\vspace*{4pt}
+    \end{list}
+}
+
+\newcommand{\schoolwithcourses} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+    \vspace*{5pt}
+}
+
+\newcommand{\school} [4] {
+    \textbf{#1} #2 $\bullet$ #3\\
+    #4 \\
+}
+% END RESUME DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%
+
+    \begin{document}
+\vspace*{-40pt}
+
+    
+
+%==== Profile ====%
+\vspace*{-10pt}
+\begin{center}
+	{\Huge \scshape {Stanley Zheng}}\\
+	New York, NY $\cdot$ stanley@zheng.nyc $\cdot$ 3473993732 $\cdot$ https://stanzheng.com\\
+\end{center}
+
+%==== Experience ====%
+\header{Work Experience}
+\vspace{1mm}
+
+\textbf{Cloudreach} \hfill New York, NY\\
+\textit{Software Engineer} \hfill January 2018 - October\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Worked as a customer facing software engineer developing software on the cloud from strategy to delivery.
+	\item Developed and maintained cloud-native data infrastructure on Google Cloud for a large government enterprise. – Used Google Cloud Services to ingest and transform data at the rate of 130K events per second to multi-tier consumers and datasinks; Data latency was \textless{} 5 seconds for events and managed over 48 TBs of data. – Designed and implemented CI/CD pipelines following Infrastructure-as-Code using Terraform and Jenkins.
+	\item Designed and built data pipelines on AWS for large multimedia advertising companies on small teams. – Designed and deployed data lakes using AWS S3, Lambda, and Glue Crawlers transforming data to flat files. – Enabled data to perform data analytics on their data lakes and warehouses using Athena and Redshift.
+\end{itemize}
+\textbf{Dominion Enterprises - Homes.com} \hfill Norfolk, VA\\
+\textit{Software Developer} \hfill March 2017 - November 2017\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item Spearheaded the platform rewrite of the Homes.com core product on a medium-sized team. – Designed architecture for microservices leveraging containerization and service orchestration on kubernetes. – Established code standard practices and style guidelines for the backend team through tooling and docs.
+\end{itemize}
+\textbf{Grow} \hfill Norfolk VA\\
+\textit{Backend Software Developer} \hfill January 2015 - October 2016\\
+\vspace{-1mm}
+\begin{itemize} \itemsep 1pt
+	\item ContentAds (2016). Lead developer on real-time dynamic ads system for Google and Rogers Canada. Developed an asset pipeline that transformed live video on-demand into assets trafficked to DoubleClick.
+	\item Grow Gifts (2015). Full-stack developer on an ecommerce project. Developed custom internal CRM using React to handle orders and developed the Java backend that serviced the client and internal facing sites.
+\end{itemize}
+
+%==== Education ====%
+\header{Education}
+\textbf{Recurse Centter}\hfill New York NY\\
+Paticipant Participated in a 12-week coding retreat at the Recurse Center in New York City. Improved programming skills through project based learning, mentoring, and pairing with other programmers. \hfill November 2016 - Feb 2017\\
+\vspace{2mm}
+\textbf{Old Dominion University}\hfill Norfolk, VA\\
+Bachelors of Science Computer Science \hfill September 2010 - June 2015\\
+\vspace{2mm}
+
+\header{Volunteer Experience}
+{\textbf{Brigade captain}}\\
+CodeforAmerica Brigade Captain\\
+\vspace*{2mm}
+
+\header{Skills}
+\begin{tabular}{ l l }
+	Proficient Languages:         & JavaScript, HCL, Markdown, Python, SQL, YAML                                              \\
+	Proficient Technologies:      & AWS, Docker, Git, GCP, Jenkins, Jupyter, Kubernetes, MySQL, Node, React, Redis, Terraform \\
+	Some Experience Languages:    & C++, C\#, Cloud Init, CSS, Golang, HTML, Java, Lua, PHP                                   \\
+	Some Experience Technologies: & Angular.js, Android, Atlassian Bamboo, Apache Airflow, Apache Beam                        \\
+	-:                            & Angular.js                                                                                \\
+\end{tabular}
+\vspace{2mm}
 
 
-        \begin{cvsubsection}{Cloud Data Engineer}{Cloudreach}{Jan 2018 – Present}
-            \begin{itemize}
-                \item Worked as a customer facing software engineer developing software on the cloud from strategy to delivery. 
-                \item Developed and maintained cloud-native data infrastructure on Google Cloud for a large government enterprise.
-                    \begin{itemize}
-                            \item Used Google Cloud Services to ingest and transform data at the rate of 130K events per second to multi-tier consumers and datasinks; data latency was < 5 seconds for events and managed over 48 TBs of data.
-                            \item Designed and implemented CI/CD pipelines following Infrastructure-as-Code using Terraform and Jenkins.
-                    \end{itemize}
-                \end{itemize}
-                \begin{itemize}
-                    \item Designed and built data pipelines on AWS for large multimedia advertising companies on small teams.
-                    \begin{itemize}
-                        \item Designed and deployed data lakes using AWS S3, Lambda, and Glue Crawlers transforming data to flat files. 
-                        \item Enabled business teams to data processing and cleaning processes to minutes on Athena and Redshift.
-                    \end{itemize}
-                \end{itemize}
-        \end{cvsubsection}
 
-        \begin{cvsubsection}{Software Engineer}{Dominion Enterprises}{May 2017 – Dec 2017}
-            \begin{itemize}
-                \item Spearheaded the platform rewrite of the Homes.com core product on a medium-sized team.
-                \begin{itemize}
-                    \item Designed architecture for microservices leveraging containerization and service orchestration on kubernetes. 
-                    \item Established code standard practices and style guidelines for the backend team through tooling and docs.
-                \end{itemize}
-            \end{itemize}
-        \end{cvsubsection}
-
-        \begin{cvsubsection}{Backend Developer}{Grow}{Jan 2015 – Oct 2016}
-            \begin{itemize}
-                \item \textbf{ContentAds} (2016). Lead developer on real-time dynamic ads system for Google and Rogers Canada. \newline 
-                Developed an asset pipeline that transformed live video on demand into assets trafficked to DoubleClick.
-            \end{itemize}
-            \begin{itemize}
-                \item \textbf{Grow Gifts} (2015). Full-stack developer on an ecommerce project. Developed custom internal CRM using React to handle orders and developed the Java backend that serviced the client and internal facing sites.
-            \end{itemize}
-        \end{cvsubsection}
-    \end{cvsection}
-
-    \begin{cvsection}{Education}
-        \begin{cvsubsection}{Participant}{Recurse Center}{Nov 2016 – Feb. 2017}
-            \begin{itemize}
-                \item Participated in a 12-week coding retreat at the Recurse Center in New York City.\newline 
-                Improved programming skills through project based learning, mentoring, and pairing with other programmers.
-            \end{itemize}
-        \end{cvsubsection}
-        \begin{cvsubsection}{Student}{Old Dominion University}{Sep 2010 – May 2015}
-            \begin{itemize}
-                \item Bachelor of Science in Computer Science.
-                \item Chair Association for Computing Machinery from Sep 2013 – May 2014.
-            \end{itemize}
-        \end{cvsubsection}
-    \end{cvsection}
-
-    \begin{cvsection}{Volunteer Experience}
-        \begin{cvsubsection}{Brigade Captain}{Code for America}{Feb 2013 – Apr 2018}
-            \begin{itemize}
-                \item Organized volunteers to use technology to write apps and open data to improve their local communities.
-            \end{itemize}
-
-        \end{cvsubsection}
-
-        \begin{cvsubsection}{Organizer Emeritus}{Norfolk JavaScript User Group}{Jan 2014 – Apr 2018}
-            \begin{itemize}
-                \item Grew the community through events and workshops to over 500+ members and 20+ events annually.
-            \end{itemize}
-        \end{cvsubsection}
-    \end{cvsection}
-
-    \begin{cvsection}{Languages and Technologies}
-        \begin{cvsubsection}{Proficient}{}{}
-            \begin{itemize}
-                    \item \text{Languages}: Bash, JavaScript, HCL, Markdown, Python, SQL, YAML \newline
-                    \text{Technologies}: AWS, Docker, Git, GCP, Jenkins, Jupyter, Kubernetes, MySQL, Node, React, Redis, Terraform
-            \end{itemize}
-        \end{cvsubsection}
-        \begin{cvsubsection}{Some Experience}{}{}
-            \begin{itemize}
-                    \item \text{Languages}: C++, C\#, Cloud Init, CSS, Golang, HTML, Java, Lua, PHP  \newline
-                    \text{Technologies}: Angular.js, Android, Atlassian Bamboo, Apache Airflow, Apache Beam,  Docker-compose, \newline Express.js, Flask, FFmpeg, Hapi.js, LAMP, Maven, Mongodb, Nginx, Redux, SQLite, Serverless, Unity, Vim
-            \end{itemize}
-        \end{cvsubsection}
-    \end{cvsection}
+\ 
 \end{document}
