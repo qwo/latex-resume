@@ -9,7 +9,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
-          args: -xelatex -file-line-error -interaction=nonstopmode
+          args: -lualatex --file-line-error --interaction=nonstopmode
           root_file: resume.tex
       - name: Release
         uses: softprops/action-gh-release@v1
