@@ -8,8 +8,8 @@ jobs:
         uses: actions/checkout@master
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
-        args: -xelatex -file-line-error -interaction=nonstopmode
         with:
+          args: -xelatex -file-line-error -interaction=nonstopmode
           root_file: resume.tex
       - name: Release
         uses: softprops/action-gh-release@v1
