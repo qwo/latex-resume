@@ -11,10 +11,10 @@ jobs:
         with:
           args: -lualatex --file-line-error --interaction=nonstopmode
           root_file: resume.tex
-          latexmk_use_xelatex: true}
+          latexmk_use_xelatex: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
           path: main.pdf
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
