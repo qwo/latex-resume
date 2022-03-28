@@ -2,7 +2,7 @@ Description
 -----------
 This repository features a LuaLaTeX version of a convenient CV class and a template
 showing it usage. The template design was originally proposed by Gayle L. McDowell at
-http://www.careercup.com/resume.
+http://www.careercup.com/resume. 
 
 The class is based on `article` class. The paper format is set to U.S. letterpaper by default.
 
